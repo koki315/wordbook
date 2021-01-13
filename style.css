@@ -88,3 +88,8 @@ button:hover{
 #list li{
   margin-bottom: 20px;
 }
+
+/* quiz */
+#quiz-container div div{
+  display: flex;
+}

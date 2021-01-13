@@ -8,25 +8,23 @@
 </head>
 <body>
 <div class="inner">
-  <div class="input-for-word input-for">
-    <label for="input-name">単語 </label>
-    <input type="text" id="input-name">
+  <div class="input-for-word input-for quiz-off">
+    <label for="input-name" class="quiz-off">単語 </label>
+    <input type="text" id="input-name" class="quiz-off">
   </div>
-  <div class="input-for-meaning input-for">
-    <label for="input-meaning">意味</label>
-    <input type="text" id="input-meaning">
+  <div class="input-for-meaning input-for quiz-off">
+    <label for="input-meaning" class="quiz-off">意味</label>
+    <input type="text" id="input-meaning" class="quiz-off">
   </div>
-  <div class="button-container">
-    <button id="btn-add" class="for-input">add</button>
-    <button id="shuffle" class="for-input">shuffle</button>
+  <div class="button-container quiz-off">
+    <button id="btn-add" class="for-input quiz-off">add</button>
+    <button id="shuffle" class="for-input quiz-off">shuffle</button>
   </div>
-  <div class="list-container">
-    <ul id="list"></ul>
+  <div class="list-container quiz-off">
+    <ul id="list" class="quiz-off"></ul>
   </div>
 
   <div id="quiz-container">
-    <p id="quiz"></p>
-    <p id="answer"></p>
   </div>
 </div>
   <script src="./main.js"></script>
