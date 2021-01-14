@@ -49,12 +49,17 @@ button {
   align-items: center;
   margin-bottom: 30px;
   font-size: 16px;
+  display: block;
 }
 input{
   width: 88%;
   margin-left: auto;
   border: 3px #7611F7 solid;
   border-radius: 5px;
+  display: inline-block;
+}
+label{
+  display: inline-block;
 }
 /* button */
 button{
@@ -62,7 +67,7 @@ button{
   color:#7611F7;
   border: 3px #7611F7 solid;
   border-radius: 5px;
-  width: 300px;
+  width: 100%;
   height: 30px;
   transition-duration: 15ms;
   font-size: 16px;
@@ -73,7 +78,10 @@ button:hover{
   cursor: pointer;
 }
 .button-container{
-  display: flex;
+  /* display: flex; */
+}
+.button-container button{
+  margin-bottom: 10px;
 }
 
 /* list */

@@ -9,8 +9,12 @@
   const words = [];
   const labels = document.getElementsByTagName('label');
   let currentIndexOfQuiz = 0;
-  const quizOffItems = document.querySelectorAll('.quiz-off');
-  console.log(quizOffItems);
+  const inlineItems = document.querySelectorAll('.inline');
+  console.log(inlineItems);
+  const blockItems = document.querySelectorAll('.block');
+  console.log(blockItems);
+  const buttonContainer = document.querySelectorAll('.button-container');
+  console.log(buttonContainer);
   btn.addEventListener('click', (event) => {
     const word = {
       name : input.value,
@@ -31,11 +35,18 @@
     while(list.firstChild){
       list.removeChild(list.firstChild);
     }
-    quizOffItems.forEach((item) => {
+    // display表示----------------------------------------------------------------------------
+    inlineItems.forEach((item) => {
+      item.style.display = "inline-block";
+    });
+    blockItems.forEach((item) => {
       item.style.display = "block";
     });
+    
+    // -----------------------------------------------------------------------------------------
     words.forEach((word, index) => {
     const wordElement = document.createElement('div');
+    wordElement.className = "word";
     const nameElement = document.createElement('h1');
     nameElement.textContent = `単語: ${word.name} `;
     word.indexOfWord = index;
@@ -51,13 +62,6 @@
     deleteElement.textContent = 'delete';
     liElement.appendChild(deleteElement);
     list.appendChild(liElement);
-    // list.style.display = "block";
-    // input.style.display = "block";
-    // inputMeaning.style.display = "block";
-    // btn.style.display = "block";
-    // shuffle.style.display = "block";
-    // labels[0].style.display = "block";
-    // labels[1].style.display = "block";
 
     deleteElement.addEventListener('click', () => {
       liElement.parentNode.removeChild(liElement);
@@ -74,18 +78,16 @@
   })
   shuffle.addEventListener('click', ()=> {
     if(words.length >= 2){
-    console.log(words);
-    // list.style.display = "none";
-    // input.style.display = "none";
-    // inputMeaning.style.display = "none";
-    // btn.style.display = "none";
-    // shuffle.style.display = "none";
-    // labels[0].style.display = "none";
-    // labels[1].style.display = "none";
-    quizOffItems.forEach((item) => {
+    
+    // display:none;-------------------------------------------------------------------------
+    blockItems.forEach((item) => {
       item.style.display = "none";
     });
-
+    inlineItems.forEach((item) => {
+      item.style.display = "none";
+    });
+    
+    // --------------------------------------------------------------------------------------
     let copiedArray = words.slice();
     newWords = [];
     while(copiedArray.length > 0){
